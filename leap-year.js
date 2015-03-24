@@ -2,9 +2,13 @@ function divisibleByFour(number){
 	return number % 4 === 0; 
 }
 
+function divisibleByHundred(number){
+	return number % 100 === 0;
+}
+
 
 function leapLogic(year){
-	if ((divisibleByFour(year)) && (year % 100 === 0 || year % 400 === 0)){
+	if ((divisibleByFour(year)) && (divisibleByHundred || year % 400 === 0)){
 		return true
 	}
 	else {
@@ -13,7 +17,7 @@ function leapLogic(year){
 }
 
 function leap(year){
-	if (((divisibleByFour(year)) && (year % 100 !== 0)) || (year % 400 === 0)){
+	if (((divisibleByFour(year)) && (divisibleByHundred)) || (year % 400 === 0)){
 		return true
 	}
 	return false
